@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @gif.url %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @gif.source %>
+</p>
+
+
+<%= link_to 'Edit', edit_gif_path(@gif) %> |
+<%= link_to 'Back', gifs_path %>
