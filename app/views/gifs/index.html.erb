@@ -11,7 +11,7 @@
 
 <% @gifs.each do |gif| %>
   <tr>
-    <td><%= gif.url %></td>
+    <td><%= link_to gif.url, gif.url %></td>
     <td><%= gif.source %></td>
     <td><%= link_to 'Show', gif %></td>
     <td><%= link_to 'Edit', edit_gif_path(gif) %></td>
