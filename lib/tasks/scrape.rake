@@ -22,7 +22,7 @@ namespace :scrape do
     
     puts("REACTIONGIFS")
     
-    base_url = "http://www.reddit.com/r/reactiongifs.json"
+    base_url = "http://www.reddit.com/r/reactiongifs.json?limit=100&after="
     after_name = ""
     
     (1...10).each do |i|
