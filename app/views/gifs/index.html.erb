@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-    <th>Url</th>
-    <th>Moderated</th>
+	<th>Moderated</th>
+    <th>Url</th>    
   </tr>
 
 <% @gifs.each do |gif| %>
   <tr>
+	<td><% if(gif.moderated) %>Yes<% end %></td>
     <td><%= link_to "#{gif.url}", gif_path(gif) %></td>
-    <td><% if(gif.moderated) %>Yes<% end %></td>
   </tr>
 <% end %>
 </table>
