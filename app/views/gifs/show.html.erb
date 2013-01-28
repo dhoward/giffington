@@ -14,6 +14,15 @@
   <%= @gif.source %>
 </p>
 
+<%= button_to 'Bless (1)', moderate_gif_path, :class => "bless" %>
+<%= button_to 'Destroy! (2)', @gif, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "destroy" %>
 
-<%= link_to 'Edit', edit_gif_path(@gif) %> |
-<%= link_to 'Back', gifs_path %>
+<script>
+	$("body").keypress(function(e) {
+	  if(e.keyCode == 49) {
+		$(".bless").click();
+	  } else if(e.keyCode == 50) {
+		$(".destroy").click();
+      }
+	});
+</script>

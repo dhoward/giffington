@@ -3,19 +3,13 @@
 <table>
   <tr>
     <th>Url</th>
-    <th>Source</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Moderated</th>
   </tr>
 
 <% @gifs.each do |gif| %>
   <tr>
-    <td><%= link_to gif.url, gif.url %></td>
-    <td><%= gif.source %></td>
-    <td><%= link_to 'Show', gif %></td>
-    <td><%= link_to 'Edit', edit_gif_path(gif) %></td>
-    <td><%= link_to 'Destroy', gif, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    <td><%= link_to "#{gif.url}", gif_path(gif) %></td>
+    <td><% if(gif.moderated) %>Yes<% end %></td>
   </tr>
 <% end %>
 </table>

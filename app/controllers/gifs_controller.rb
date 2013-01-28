@@ -80,4 +80,19 @@ class GifsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def moderate
+    @gif = Gif.find(params[:id])
+    puts "hey"
+    puts @gif.url
+    @gif.moderated = true
+    @gif.save
+    
+    @gif2 = Gif.next(@gif).first
+    puts "GOT ONE"
+    #puts @gif2.url
+    puts @gif2
+    puts "URL"
+    redirect_to( :action => 'show', :id => @gif2.id )
+  end
 end

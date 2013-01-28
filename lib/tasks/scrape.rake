@@ -14,7 +14,10 @@ namespace :scrape do
       result["data"]["children"].each do |post|
         if /([^\s]+(\.(?i)(gif))$)/.match(post["data"]["url"])
           puts(post["data"]["url"])
-          Gif.find_or_create_by_url(post["data"]["url"]){ |g| g.source = "Reddit" }
+          Gif.find_or_create_by_url(post["data"]["url"]){ 
+            |g| g.source = "Reddit" 
+                g.moderated = false
+            }
           after_name = post["data"]["name"]
         end
       end

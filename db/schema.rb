@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123074151) do
+ActiveRecord::Schema.define(:version => 20130128081705) do
 
   create_table "gifs", :force => true do |t|
     t.string   "url"
     t.string   "source"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "moderated"
   end
 
 end
